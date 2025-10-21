@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1"> 
+  <title>Student Portal — Single Page</title> <!-- Fonts & Icons --> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Shared stylesheet --> 
+  <link rel="stylesheet" href="style.css"> 
+  <meta name="theme-color" content="#1e293b"> 
+ </head> 
+ <body> 
+  <div class="app"> 
+   <aside class="sidebar" id="sidebar" aria-label="Main sidebar"> 
+    <div class="sidebar-top"> 
+     <div class="brand"> <button class="logo-btn" id="sidebar-toggle" aria-label="Toggle menu"> 
+       <div class="logo" aria-hidden="true">
+        <i class="fa-solid fa-graduation-cap"></i>
+       </div> </button> 
+      <div class="title">
+       Student Portal
+      </div> 
+     </div> 
+     <nav class="nav" role="navigation" aria-label="Main navigation"> <button class="nav-item active" data-page="dashboard"><i class="fa-solid fa-house"></i><span>Dashboard</span></button> <button class="nav-item" data-page="profile"><i class="fa-solid fa-user"></i><span>Profile</span></button> <button class="nav-item" data-page="registration"><i class="fa-solid fa-clipboard-list"></i><span>Registration</span></button> <button class="nav-item" data-page="courses"><i class="fa-solid fa-book-open"></i><span>Courses</span></button> <button class="nav-item" data-page="grades"><i class="fa-solid fa-chart-line"></i><span>Grades</span></button> <button class="nav-item" data-page="payment"><i class="fa-solid fa-coins"></i><span>Payments</span></button> 
+     </nav> 
+    </div> 
+    <div class="sidebar-footer"> <button class="logout" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button> 
+    </div> 
+   </aside>  
+   <main class="main" id="main"> 
+    <div class="topbar" id="topbar" role="banner"> 
+     <div class="searchbox" role="search" aria-label="Search portal"> <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 
+      <input id="global-search" type="text" placeholder="Search announcements, courses, payments..." aria-label="Search input"> 
+     </div> 
+     <div class="user-mini" aria-hidden="false"> 
+      <img src="https://via.placeholder.com/44" alt="avatar"> 
+      <div class="user-info"> 
+       <div class="user-name">
+        Sean Michael Aguilar
+       </div> 
+       <div class="user-year">
+        BS Information Technology · 3rd Year
+       </div> 
+      </div> 
+     </div> 
+    </div>  
+    <section id="dashboard" class="page page-active" aria-labelledby="dashboard-heading"> 
+     <div class="hero card" role="region" aria-label="Welcome"> 
+      <div class="hero-left"> 
+       <div class="hero-date" id="hero-date">
+        —
+       </div> 
+       <h1 class="hero-title">Welcome back, Sean!</h1> 
+       <p class="hero-sub">Quick overview of your semester and outstanding tasks.</p> 
+      </div> 
+      <div> <button class="btn-ghost" data-page="grades">View Grades</button> 
+      </div> 
+     </div> 
+     <div class="dashboard-grid"> 
+      <div class="finance"> 
+       <div class="finance-row"> 
+        <div class="card finance-card"> 
+         <div class="finance-icon">
+          <i class="fa-solid fa-coins"></i>
+         </div> 
+         <div> 
+          <div class="finance-amount">
+           ₱12,450.00
+          </div> 
+          <div class="finance-label">
+           Remaining Balance
+          </div> 
+         </div> 
+        </div> 
+        <div class="card finance-card featured"> 
+         <div class="finance-icon">
+          <i class="fa-solid fa-money-bill-wave"></i>
+         </div> 
+         <div> 
+          <div class="finance-amount">
+           ₱58,500.00
+          </div> 
+          <div class="finance-label">
+           Total Paid (All Years)
+          </div> 
+         </div> 
+        </div> 
+        <div class="card finance-card"> 
+         <div class="finance-icon">
+          <i class="fa-solid fa-file-invoice"></i>
+         </div> 
+         <div> 
+          <div class="finance-amount">
+           ₱0.00
+          </div> 
+          <div class="finance-label">
+           Pending Requests
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card enrolled" aria-live="polite"> 
+        <div class="section-header"> 
+         <h3>Enrolled Courses</h3> <a class="seeall" data-page="courses">See all</a> 
+        </div> 
+        <div class="enrolled-row"> 
+         <div class="course-card"> 
+          <div> 
+           <h4>Web Development</h4> 
+           <div class="course-meta">
+            3 units · Tue/Thu · IT-104
+           </div> 
+          </div> 
+          <div>
+           <button class="btn-ghost" data-page="courses">View</button>
+          </div> 
+         </div> 
+         <div class="course-card"> 
+          <div> 
+           <h4>Database Systems</h4> 
+           <div class="course-meta">
+            3 units · Mon/Wed · IT-201
+           </div> 
+          </div> 
+          <div>
+           <button class="btn-ghost" data-page="courses">View</button>
+          </div> 
+         </div> 
+         <div class="course-card"> 
+          <div> 
+           <h4>Networking</h4> 
+           <div class="course-meta">
+            3 units · Fri · Lab 5
+           </div> 
+          </div> 
+          <div>
+           <button class="btn-ghost" data-page="courses">View</button>
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="card"> 
+        <div class="section-header"> 
+         <h3>Upcoming Tasks</h3> 
+         <div class="seeall" data-page="registration">
+          All
+         </div> 
+        </div> 
+        <ul class="notice-list-plain"> 
+         <li>Pay prelim fees by Oct 21 — avoid registration hold.</li> 
+         <li>Midterm exams start Oct 25 — check room assignments.</li> 
+         <li>Project proposal due Oct 28 for Web Development.</li> 
+        </ul> 
+       </div> 
+      </div> 
+      <aside class="rightpanel"> 
+       <div class="card"> 
+        <div class="section-header small">
+         <h4>Quick links</h4>
+        </div> 
+        <ul style="margin-top:8px;color:var(--muted);"> 
+         <li>Student Handbook (2025)</li> 
+         <li>Registrar forms &amp; templates</li> 
+         <li>Scholarship portal</li> 
+         <li>Library services</li> 
+         <li>IT support / Helpdesk</li> 
+        </ul> 
+       </div> 
+       <div class="card"> 
+        <div class="section-header small">
+         <h4>Term info</h4>
+        </div> 
+        <div style="color:var(--muted); margin-top:8px;"> <strong>Current Term:</strong> 3rd Year - 2nd Semester
+         <br> <strong>Academic Year:</strong> 2025–2026
+         <br> <strong>Enrollment Status:</strong> Registered (pending payment) 
+        </div> 
+       </div> 
+      </aside> 
+     </div> 
+    </section> 
+    <section id="grades" class="page" aria-labelledby="grades-heading"> 
+     <div class="page-inner"> 
+      <div class="section-header"> 
+       <h3>Grades</h3> 
+       <div class="seeall">
+        Export • <button class="btn small" id="export-grades">Export CSV</button>
+       </div> 
+      </div> 
+      <div class="card"> 
+       <div class="grades-year">
+        1st Year — 1st Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="1st Year 1st Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Introduction to Computing (IT-101)</td>
+           <td>1.00</td>
+           <td>1.25</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Programming 1 (IT-102)</td>
+           <td>1.25</td>
+           <td>1.50</td>
+           <td>1.75</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Discrete Mathematics (MATH-101)</td>
+           <td>2.00</td>
+           <td>2.50</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Computer Literacy (GEN-101)</td>
+           <td>1.50</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>English Communication (ENG-101)</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        1st Year — 2nd Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="1st Year 2nd Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Programming 2 (IT-103)</td>
+           <td>1.00</td>
+           <td>1.50</td>
+           <td>2.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Data Structures (IT-104)</td>
+           <td>1.00</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Computer Organization (IT-105)</td>
+           <td>1.50</td>
+           <td>2.50</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Ethics &amp; Society (GEN-102)</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Logic &amp; Boolean Algebra (MATH-102)</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        2nd Year — 1st Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="2nd Year 1st Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Object-Oriented Programming (IT-201)</td>
+           <td>1.00</td>
+           <td>1.50</td>
+           <td>2.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Web Systems (IT-202)</td>
+           <td>1.00</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Linear Algebra (MATH-201)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Software Lab (IT-210L)</td>
+           <td>1.25</td>
+           <td>1.50</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Probability (MATH-202)</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div>  
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        2nd Year — 2nd Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="2nd Year 2nd Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Algorithms &amp; Complexity (IT-301)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Software Engineering (IT-310)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Database Systems (IT-320)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Humanities Elective (GEN-200)</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>1.75</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Systems Lab (IT-330L)</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        3rd Year — 1st Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="3rd Year 1st Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Operating Systems (IT-401)</td>
+           <td>1.00</td>
+           <td>1.50</td>
+           <td>2.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Computer Networks (IT-402)</td>
+           <td>2.50</td>
+           <td>1.50</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Human-Computer Interaction (IT-409)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.75</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Elective: Data Mining (IT-420)</td>
+           <td>1.50</td>
+           <td>2.50</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Network Security Lab (IT-430L)</td>
+           <td>1.50</td>
+           <td>2.00</td>
+           <td>2.75</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        3rd Year — 2nd Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="3rd Year 2nd Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Web Development (Advanced) (IT-410)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Mobile Computing (IT-411)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>System Analysis &amp; Design (IT-412)</td>
+           <td>1.50</td>
+           <td>1.50</td>
+           <td>2.50</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Research Methods (IT-430)</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>IT Elective: Cloud Basics (IT-440)</td>
+           <td>1.25</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div>  
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        4th Year — 1st Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="4th Year 1st Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Capstone Project I (IT-501)</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>AI Fundamentals (IT-502)</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Professional Ethics (GEN-501)</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Human Factors (IT-510)</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Seminar (GEN-502)</td>
+           <td>1.25</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <div class="grades-year">
+        4th Year — 2nd Semester
+       </div> 
+       <div class="table-wrap"> 
+        <table class="grades-table" aria-label="4th Year 2nd Semester grades"> 
+         <thead> 
+          <tr>
+           <th>Subject</th>
+           <th>Prelim</th>
+           <th>Midterm</th>
+           <th>Final</th>
+           <th>Remarks</th>
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Capstone Project II (IT-502)</td>
+           <td>2.00</td>
+           <td>2.00</td>
+           <td>2.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Cloud Computing (Advanced) (IT-520)</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Internship (PRAC-600)</td>
+           <td>Passed</td>
+           <td>Passed</td>
+           <td>Passed</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Entrepreneurship (GEN-510)</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>1.00</td>
+           <td>Passed</td>
+          </tr> 
+          <tr>
+           <td>Open Elective (IT-5xx)</td>
+           <td>1.50</td>
+           <td>1.25</td>
+           <td>1.25</td>
+           <td>Passed</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+     </div> 
+    </section> <!-- PAYMENT --> 
+    <section id="payment" class="page" aria-labelledby="payment-heading"> 
+     <div class="page-inner"> 
+      <div class="section-header"> 
+       <h3>Payment Info</h3> 
+      </div> 
+      <div class="cards-grid"> 
+       <div class="card"> 
+        <h4>Outstanding Balance</h4> 
+        <p class="muted">Current semester</p> 
+        <div class="big">
+         ₱12,450.00
+        </div> 
+        <div class="actions">
+         <button class="btn" id="pay-now">Pay Now</button>
+        </div> 
+       </div> 
+       <div class="card"> 
+        <h4>Payment History</h4> 
+        <p class="muted">Recent transactions</p> 
+        <ul class="notice-list-plain" style="margin-top:8px;"> 
+         <li>Mar 08, 2025 — ₱27,000 — 3rd Year 2nd Sem</li> 
+         <li>Jun 05, 2025 — ₱11,500 — 3rd Year 3rd Sem</li> 
+         <li>Oct 04, 2024 — ₱27,000 — 3rd Year 1st Sem</li> 
+         <li>Mar 10, 2024 — ₱26,000 — 2nd Year 2nd Sem</li> 
+        </ul> 
+       </div> 
+       <div class="card"> 
+        <h4>Fees &amp; Breakdown</h4> 
+        <ul style="margin-top:8px;color:var(--muted);"> 
+         <li><strong>Tuition</strong> — ₱25,000</li> 
+         <li><strong>Laboratory Fee</strong> — ₱2,500</li> 
+         <li><strong>Library Fee</strong> — ₱1,200</li> 
+         <li><strong>Miscellaneous</strong> — ₱3,800 (Pending)</li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </section>
+    <section id="profile" class="page" aria-labelledby="profile-heading"> 
+     <div class="page-inner"> 
+      <div class="section-header"> 
+       <h3>Student Profile</h3> 
+      </div> 
+      <div class="card profile-card"> 
+       <div class="profile-left"> 
+        <img src="https://via.placeholder.com/160" alt="avatar"> 
+       </div> 
+       <div class="profile-right"> 
+        <h2>Sean Michael Aguilar</h2> 
+        <p class="muted">BS Information Technology · 3rd Year</p> 
+        <div class="profile-grid"> 
+         <div> <strong>Student ID</strong> 
+          <div>
+           2025-12345
+          </div> 
+         </div> 
+         <div> <strong>Email</strong> 
+          <div>
+           sean.aguilar@college.edu
+          </div> 
+         </div> 
+         <div> <strong>Phone</strong> 
+          <div>
+           +63 912 345 6789
+          </div> 
+         </div> 
+         <div> <strong>Adviser</strong> 
+          <div>
+           Prof. Jessica Santos
+          </div> 
+         </div> 
+         <div> <strong>Address</strong> 
+          <div>
+           Quezon City, Metro Manila
+          </div> 
+         </div> 
+         <div> <strong>Scholarship</strong> 
+          <div>
+           Academic Excellence Grant
+          </div> 
+         </div> 
+         <div> <strong>Enrollment Status</strong> 
+          <div>
+           Active
+          </div> 
+         </div> 
+         <div> <strong>Date Enrolled</strong> 
+          <div>
+           Aug 15, 2022
+          </div> 
+         </div> 
+        </div> 
+        <div class="actions">
+         <button class="btn" id="edit-profile">Edit Profile</button>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section>  
+    <section id="registration" class="page" aria-labelledby="registration-heading"> 
+     <div class="page-inner"> 
+      <div class="section-header"> 
+       <h3>Registration</h3> 
+       <div class="seeall muted">
+        Static preview (non-functional)
+       </div> 
+      </div> 
+      <div class="card"> 
+       <h4>Academic Term</h4> 
+       <div class="muted" style="margin-top:8px;"> <strong>Academic Year:</strong> 2025–2026
+        <br> <strong>Term:</strong> 3rd Year — 2nd Semester
+        <br> <strong>Registration Period:</strong> Oct 01, 2025 — Oct 31, 2025
+        <br> <strong>Adviser:</strong> Prof. Jessica Santos 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <h4>Registration Form (static)</h4> 
+       <div style="margin-top:10px;color:var(--muted);"> <strong>Student:</strong> Sean Michael Aguilar — 2025-12345
+        <br> <strong>Program:</strong> BS Information Technology
+        <br> <strong>Year / Semester:</strong> 3rd Year — 2nd Semester
+        <br> <strong>Enrollment Status:</strong> Registered (Pending Payment) 
+       </div> 
+       <hr style="margin:12px 0; border:none; border-top:1px solid rgba(15,23,42,0.04)"> 
+       <h4 style="margin-bottom:8px;">Course Selection (checked = enrolled)</h4> 
+       <div class="registration-grid"> <!-- static checkboxes shown visually but non-functional --> <label class="reg-item"><input type="checkbox" checked disabled> Web Development (IT-410) — 3 units · Tue/Thu</label> <label class="reg-item"><input type="checkbox" checked disabled> Database Systems (IT-320) — 3 units · Mon/Wed</label> <label class="reg-item"><input type="checkbox" checked disabled> Networking (IT-402) — 3 units · Fri</label> <label class="reg-item"><input type="checkbox" disabled> Mobile Computing (IT-411) — 3 units</label> <label class="reg-item"><input type="checkbox" disabled> System Analysis &amp; Design (IT-412) — 3 units</label> <label class="reg-item"><input type="checkbox" disabled> Research Methods (IT-430) — 3 units</label> <label class="reg-item"><input type="checkbox" disabled> Elective: Cloud Basics (IT-440) — 2 units</label> <label class="reg-item"><input type="checkbox" disabled> PE / NSTP / Other</label> 
+       </div> 
+       <div style="margin-top:12px;color:var(--muted);"> <strong>Total Units (selected):</strong> 9 units (sample)
+        <br> <strong>Notes:</strong> Finalize registration by paying the preliminary fees. This is a static preview — to implement real registration, connect to your backend. 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <h4>Registration Summary</h4> 
+       <div style="margin-top:8px;color:var(--muted);"> 
+        <table class="simple-table"> 
+         <thead>
+          <tr>
+           <th>Field</th>
+           <th>Value</th>
+          </tr>
+         </thead> 
+         <tbody> 
+          <tr>
+           <td>Student</td>
+           <td>Sean Michael Aguilar</td>
+          </tr> 
+          <tr>
+           <td>Program</td>
+           <td>BS Information Technology</td>
+          </tr> 
+          <tr>
+           <td>Term</td>
+           <td>3rd Year — 2nd Sem</td>
+          </tr> 
+          <tr>
+           <td>Enrollment Status</td>
+           <td>Registered (Pending Payment)</td>
+          </tr> 
+          <tr>
+           <td>Adviser</td>
+           <td>Prof. Jessica Santos</td>
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+     </div> 
+    </section>  
+    <section id="courses" class="page" aria-labelledby="courses-heading"> 
+     <div class="page-inner"> 
+      <div class="section-header"> 
+       <h3>Courses Catalog — Full 4-Year</h3> 
+       <div class="seeall muted">
+        Static catalog (informational)
+       </div> 
+      </div> 
+      <div class="card"> 
+       <h4>1st Year</h4> 
+       <div class="muted" style="margin-top:8px;">
+        Core foundation courses and general education.
+       </div> 
+       <div class="catalog-grid"> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-101
+         </div> 
+         <div class="course-title">
+          Introduction to Computing
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: None
+         </div> 
+         <div class="course-desc">
+          Fundamental computing concepts, history, basic applications and digital literacy.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-102
+         </div> 
+         <div class="course-title">
+          Programming 1
+         </div> 
+         <div class="course-meta">
+          4 units • Prereq: IT-101
+         </div> 
+         <div class="course-desc">
+          Introductory programming using procedural paradigms, basic data types and control flow.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          MATH-101
+         </div> 
+         <div class="course-title">
+          Discrete Mathematics
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: None
+         </div> 
+         <div class="course-desc">
+          Sets, relations, logic, combinatorics, basic proof techniques—foundation for CS theory.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          GEN-101
+         </div> 
+         <div class="course-title">
+          Computer Literacy
+         </div> 
+         <div class="course-meta">
+          2 units • Prereq: None
+         </div> 
+         <div class="course-desc">
+          Basic computer operations and productivity tools for academic use.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          ENG-101
+         </div> 
+         <div class="course-title">
+          English Communication
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: None
+         </div> 
+         <div class="course-desc">
+          Academic writing, communication, presentation skills and technical writing basics.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-103
+         </div> 
+         <div class="course-title">
+          Programming 2
+         </div> 
+         <div class="course-meta">
+          4 units • Prereq: IT-102
+         </div> 
+         <div class="course-desc">
+          Object-oriented concepts, functions, classes, and basic data structures.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          MATH-102
+         </div> 
+         <div class="course-title">
+          Logic &amp; Boolean Algebra
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: MATH-101
+         </div> 
+         <div class="course-desc">
+          Boolean algebra, logic design, truth tables and combinational circuits basics.
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <h4>2nd Year</h4> 
+       <div class="muted" style="margin-top:8px;">
+        Intermediate programming, systems, and math.
+       </div> 
+       <div class="catalog-grid"> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-201
+         </div> 
+         <div class="course-title">
+          Object-Oriented Programming
+         </div> 
+         <div class="course-meta">
+          4 units • Prereq: IT-103
+         </div> 
+         <div class="course-desc">
+          Classes, inheritance, polymorphism, design patterns, and intermediate OOP practices.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-202
+         </div> 
+         <div class="course-title">
+          Web Systems
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-103
+         </div> 
+         <div class="course-desc">
+          Client-server concepts, HTML/CSS/JavaScript basics, simple server-side integration.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-210L
+         </div> 
+         <div class="course-title">
+          Software Lab
+         </div> 
+         <div class="course-meta">
+          1-2 units • Prereq: IT-201
+         </div> 
+         <div class="course-desc">
+          Hands-on lab supporting programming and system development courses.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          MATH-201
+         </div> 
+         <div class="course-title">
+          Linear Algebra
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: MATH-101
+         </div> 
+         <div class="course-desc">
+          Matrices, vectors, eigenvalues — for graphics, ML basics, and algorithms.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-220
+         </div> 
+         <div class="course-title">
+          Probability &amp; Statistics
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: MATH-101
+         </div> 
+         <div class="course-desc">
+          Probability models, distributions, hypothesis testing — data-driven foundation.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-230
+         </div> 
+         <div class="course-title">
+          Data Structures
+         </div> 
+         <div class="course-meta">
+          4 units • Prereq: IT-201
+         </div> 
+         <div class="course-desc">
+          Lists, stacks, queues, trees, hashing, algorithms for searching and sorting.
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <h4>3rd Year</h4> 
+       <div class="muted" style="margin-top:8px;">
+        Advanced systems, networks, electives, and research foundations.
+       </div> 
+       <div class="catalog-grid"> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-310
+         </div> 
+         <div class="course-title">
+          Software Engineering
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-230
+         </div> 
+         <div class="course-desc">
+          SDLC, requirements, design, testing, project planning, and team workflows.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-320
+         </div> 
+         <div class="course-title">
+          Database Systems
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-230
+         </div> 
+         <div class="course-desc">
+          Relational models, SQL, schema design, normalization, and basic DB admin.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-401
+         </div> 
+         <div class="course-title">
+          Operating Systems
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-230
+         </div> 
+         <div class="course-desc">
+          Processes, scheduling, memory management, filesystems, and concurrency.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-402
+         </div> 
+         <div class="course-title">
+          Computer Networks
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-202
+         </div> 
+         <div class="course-desc">
+          Network layers, protocols, routing, LAN/WAN, and network troubleshooting basics.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-409
+         </div> 
+         <div class="course-title">
+          Human-Computer Interaction
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-202
+         </div> 
+         <div class="course-desc">
+          Design principles, usability testing, accessibility, and interface evaluation.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-420
+         </div> 
+         <div class="course-title">
+          Data Mining
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-220
+         </div> 
+         <div class="course-desc">
+          Data preprocessing, clustering, classification, basic pattern discovery.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-430L
+         </div> 
+         <div class="course-title">
+          Network Security Lab
+         </div> 
+         <div class="course-meta">
+          1-2 units • Prereq: IT-402
+         </div> 
+         <div class="course-desc">
+          Practical security exercises, penetration basics, and secure config labs.
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="card" style="margin-top:14px;"> 
+       <h4>4th Year</h4> 
+       <div class="muted" style="margin-top:8px;">
+        Capstone, internships, and advanced electives.
+       </div> 
+       <div class="catalog-grid"> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-501
+         </div> 
+         <div class="course-title">
+          Capstone Project I
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: Senior Standing
+         </div> 
+         <div class="course-desc">
+          Project planning, proposal, requirements and system design for capstone.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-502
+         </div> 
+         <div class="course-title">
+          Capstone Project II
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-501
+         </div> 
+         <div class="course-desc">
+          Project implementation, testing, deployment and final presentation.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-520
+         </div> 
+         <div class="course-title">
+          Cloud Computing (Advanced)
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-440
+         </div> 
+         <div class="course-desc">
+          Virtualization, cloud services, IaaS/PaaS basics, deployment and DevOps intro.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          PRAC-600
+         </div> 
+         <div class="course-title">
+          Internship / Practicum
+         </div> 
+         <div class="course-meta">
+          6 units • Prereq: Senior Standing
+         </div> 
+         <div class="course-desc">
+          Workplace practicum under company/industry supervision, culminating report.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          IT-550
+         </div> 
+         <div class="course-title">
+          Machine Learning (Elective)
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: IT-220
+         </div> 
+         <div class="course-desc">
+          Intro to ML models, supervised learning, evaluation, and basic pipelines.
+         </div> 
+        </div> 
+        <div class="course-item"> 
+         <div class="course-code">
+          GEN-510
+         </div> 
+         <div class="course-title">
+          Entrepreneurship
+         </div> 
+         <div class="course-meta">
+          3 units • Prereq: None
+         </div> 
+         <div class="course-desc">
+          Business basics, start-up culture, project pitching and product-market fit.
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+   </main> 
+  </div> 
+  <script src="script.js"></script> 
+ </body>
+</html>
